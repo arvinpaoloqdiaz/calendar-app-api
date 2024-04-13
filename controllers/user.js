@@ -21,7 +21,7 @@ module.exports.registerUser = async ( req, res) => {
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			email: req.body.email,
-			password: bcrypt.hashSync(req.body.password, 10)
+			password: bcrypt.hashSync(req.body.password, parseInt(process.env.HASHROUNDS))
 		});
 
 		const savedUser = await newUser.save();

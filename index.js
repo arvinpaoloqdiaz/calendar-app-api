@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect("mongodb+srv://admin:admin@zuitt-bootcamp.hb9czsm.mongodb.net/calendar-app-api?retryWrites=true&w=majority&appName=Zuitt-Bootcamp",
+mongoose.connect(process.env.DBLINK,
 {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
